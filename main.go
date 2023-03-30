@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
 func reverseString(s string) string {
 	r := []rune(s)
@@ -13,6 +17,9 @@ func reverseString(s string) string {
 }
 
 func main() {
-	s := "Skillfactory"
+	fmt.Println("Введите строку: ")
+	scanner := bufio.NewScanner(os.Stdin)
+	scanner.Scan()
+	s := scanner.Text()
 	fmt.Println(reverseString(s))
 }
